@@ -1,0 +1,16 @@
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 压缩包
+*.zip
+*.crx
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 隐私文件 (虽然我们没有放 secrets 在代码里，不论如何还是加上)
+*.pem
+*.key
+config.local.js

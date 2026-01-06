@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抖音采集助手</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="header__icon">🎬</div>
+            <h1 class="header__title">抖音采集助手</h1>
+        </header>
+
+        <!-- 页面状态 -->
+        <section class="page-status" id="pageStatus">
+            <div class="page-status__icon">📍</div>
+            <div class="page-status__content">
+                <div class="page-status__title" id="statusTitle">检测页面中...</div>
+                <div class="page-status__desc" id="statusDesc"></div>
+            </div>
+        </section>
+
+        <!-- 非抖音页面提示 -->
+        <div class="not-douyin" id="notDouyinTip" style="display: none;">
+            <div class="not-douyin__icon">⚠️</div>
+            <p>请在抖音博主主页使用此插件</p>
+            <a href="https://www.douyin.com/" target="_blank" class="not-douyin__link">打开抖音</a>
+        </div>
+
+        <!-- 操作面板 -->
+        <section class="panel" id="mainPanel" style="display: none;">
+            <!-- 筛选条件 -->
+            <div class="filter">
+                <label class="filter__label">🎯 最低点赞数筛选</label>
+                <div class="filter__input-wrap">
+                    <input type="number" class="filter__input" id="likeThreshold" placeholder="留空则不筛选" min="0" step="1">
+                    <span class="filter__hint">只能输入正整数</span>
+                </div>
+            </div>
+
+            <!-- 开始筛选按钮 -->
+            <button class="action-btn action-btn--primary" id="extractBtn">
+                🔍 开始采集
+            </button>
+
+            <!-- 结果区域 -->
+            <div class="results" id="resultsArea" style="display: none;">
+                <div class="results__header">
+                    <span class="results__title">📊 采集结果</span>
+                    <span class="results__count" id="resultsCount">0 个视频</span>
+                </div>
+                <div class="results__list" id="resultsList"></div>
+            </div>
+
+            <!-- 保存按钮 -->
+            <button class="action-btn action-btn--save" id="saveBtn" style="display: none;">
+                💾 保存到飞书表格
+            </button>
+
+            <!-- 状态提示 -->
+            <div class="status" id="status"></div>
+        </section>
+
+        <!-- 底部设置入口 -->
+        <footer class="footer">
+            <a href="donate.html" target="_blank" class="footer__link footer__link--donate">☕ 打赏</a>
+            <span class="footer__divider">|</span>
+            <a href="options.html" target="_blank" class="footer__link">⚙️ 设置</a>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
